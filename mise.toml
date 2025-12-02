@@ -1,3 +1,4 @@
 [tools]
 "cargo:bacon" = "latest"
+"cargo:cargo-nextest" = "latest"
 rust = "latest"

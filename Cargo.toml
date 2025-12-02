@@ -1,3 +1,12 @@
-[workspace]
-resolver = "3"
-members = ["day01"]
+[package]
+name = "advent_of_code_2025"
+version = "0.1.0"
+edition = "2024"
+
+[[bench]]
+harness = false
+name = "benchmark"
+
+[dependencies]
+divan = "0.1.21"
+itertools = "0.14.0"
