@@ -53,7 +53,7 @@ pub fn solve(input: &str) -> usize {
     let mut beam_cache = HashSet::new();
     let mut splitter_cache = HashSet::new();
 
-    let splits = beam(grid.start, &grid, &mut beam_cache, &mut splitter_cache);
+    beam(grid.start, &grid, &mut beam_cache, &mut splitter_cache);
 
     splitter_cache.len()
 }
@@ -73,6 +73,6 @@ mod tests {
     fn test_input() {
         let input = include_str!("input.txt");
         let result = solve(input);
-        assert_eq!(1, result);
+        assert_eq!(1537, result);
     }
 }
