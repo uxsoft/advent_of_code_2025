@@ -21,13 +21,13 @@ impl Point3d {
         Point3d { x, y, z }
     }
 
-    pub fn distance(&self, other: &Point3d) -> f64 {
+    pub fn distance(&self, other: &Point3d) -> usize {
         let num = ((self.x as isize - other.x as isize).pow(2)
             + (self.y as isize - other.y as isize).pow(2)
             + (self.z as isize - other.z as isize).pow(2)) as usize;
 
-        //num.sqrt()
-        f64::sqrt(num as f64)
+        //f64::sqrt(num as f64)
+        num.isqrt() // performance optimization
     }
 
     pub fn parse(input: &str) -> Self {

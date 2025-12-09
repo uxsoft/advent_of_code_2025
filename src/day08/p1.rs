@@ -8,7 +8,7 @@ pub fn solve(input: &str, iterations: usize) -> usize {
         .map(super::Point3d::parse)
         .collect::<Vec<super::Point3d>>();
 
-    let distances: BTreeMap<(usize, usize), f64> = boxes
+    let distances: BTreeMap<(usize, usize), _> = boxes
         .iter()
         .enumerate()
         .flat_map(|(i, a)| {

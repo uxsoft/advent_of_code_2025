@@ -8,7 +8,7 @@ pub fn solve(input: &str) -> usize {
         .map(super::Point3d::parse)
         .collect::<Vec<super::Point3d>>();
 
-    let distances: HashMap<(usize, usize), f64> = boxes
+    let distances: HashMap<(usize, usize), _> = boxes
         .iter()
         .enumerate()
         .flat_map(|(i, a)| {
@@ -22,7 +22,9 @@ pub fn solve(input: &str) -> usize {
 
     let order = distances
         .keys()
-        .sorted_by(|a, b| distances[a].partial_cmp(&distances[b]).unwrap())
+        //.sorted_by(|a, b| distances[a].partial_cmp(&distances[b]).unwrap())
+        // performance optimization
+        .sorted_by_cached_key(|i| distances[i])
         .collect::<Vec<_>>();
 
     let mut uf = super::UnionFind::new();
