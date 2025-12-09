@@ -8,31 +8,16 @@ pub fn solve(input: &str) -> usize {
         .map(super::Point3d::parse)
         .collect::<Vec<super::Point3d>>();
 
-    let distances: HashMap<(usize, usize), _> = boxes
-        .iter()
-        .enumerate()
-        .flat_map(|(i, a)| {
-            boxes
-                .iter()
-                .enumerate()
-                .filter(move |(j, _)| i > *j)
-                .map(move |(j, b)| ((i, j), a.distance(&b)))
-        })
-        .collect();
-
-    let order = distances
-        .keys()
-        //.sorted_by(|a, b| distances[a].partial_cmp(&distances[b]).unwrap())
-        // performance optimization
-        .sorted_by_cached_key(|i| distances[i])
-        .collect::<Vec<_>>();
+    let order = (0..boxes.len())
+        .flat_map(|i| (0..i).map(move |j| (i, j)))
+        .sorted_by_cached_key(|&(i, j)| boxes[i].distance(&boxes[j]));
 
     let mut uf = super::UnionFind::new();
 
     for (x, y) in order {
-        uf.union(*x, *y);
+        uf.union(x, y);
         if uf.parent.len() == boxes.len() - 1 {
-            return boxes[*y].x * boxes[*x].x;
+            return boxes[y].x * boxes[x].x;
         }
     }
 

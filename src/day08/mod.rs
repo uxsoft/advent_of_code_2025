@@ -93,7 +93,7 @@ impl UnionFind {
     pub fn sizes(&self) -> Vec<usize> {
         self.size
             .iter()
-            .filter(|(n, size)| self.parent(n) == **n)
+            .filter(|(n, _)| self.parent(n) == **n)
             .map(|(_, size)| *size)
             .collect()
     }
