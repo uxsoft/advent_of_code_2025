@@ -7,3 +7,7 @@ bacon test -- day01
 ```bash
 cargo bench
 ```
+
+```bash
+samply record ./target/debug/advent_of_code_2025
+```

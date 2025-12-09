@@ -1,4 +1,10 @@
 [tools]
 "cargo:bacon" = "latest"
 "cargo:cargo-nextest" = "latest"
+"cargo:samply" = "latest"
 rust = "latest"
+
+[tasks]
+bench = "cargo bench"
+bacon = "bacon test -- day08"
+flame = "cargo build && samply record ./target/debug/advent_of_code_2025"
