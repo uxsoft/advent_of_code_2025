@@ -9,4 +9,11 @@ name = "benchmark"
 
 [dependencies]
 divan = "0.1.21"
-itertools = "0.14.0"
+good_lp = { version = "1.14.2", default-features = false, features = [
+  "scip",
+  "scip_bundled"
+] }
+indicatif = { version = "0.18.3", features = ["rayon"] }
+itertools = { version = "0.14.0" }
+rayon = "1.11.0"
+wide = "1.1.0"

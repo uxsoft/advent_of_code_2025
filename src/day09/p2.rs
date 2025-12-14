@@ -31,7 +31,6 @@ mod tests {
     fn test_input() {
         let input = include_str!("input.txt");
         let result = solve(input);
-        //assert!(result < 1597246662);
         assert_eq!(1410501884, result);
     }
 }
