@@ -8,9 +8,10 @@ pub mod day07;
 pub mod day08;
 pub mod day09;
 pub mod day10;
+pub mod day11;
 
 fn main() {
-    let input = include_str!("day10/example.txt");
-    let result = day10::p2_lp::solve(input);
+    let input = include_str!("day11/input.txt");
+    let result = day11::p2::solve(input);
     println!("Part 2: {}", result);
 }
