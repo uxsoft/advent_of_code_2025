@@ -10,8 +10,7 @@ name = "benchmark"
 [dependencies]
 divan = "0.1.21"
 good_lp = { version = "1.14.2", default-features = false, features = [
-  "scip",
-  "scip_bundled"
+  "microlp",
 ] }
 indicatif = { version = "0.18.3", features = ["rayon"] }
 itertools = { version = "0.14.0" }

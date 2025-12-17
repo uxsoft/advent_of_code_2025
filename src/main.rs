@@ -10,7 +10,7 @@ pub mod day09;
 pub mod day10;
 
 fn main() {
-    let input = include_str!("day10/input.txt");
-    let result = day10::p2::solve_par(input);
+    let input = include_str!("day10/example.txt");
+    let result = day10::p2_lp::solve(input);
     println!("Part 2: {}", result);
 }

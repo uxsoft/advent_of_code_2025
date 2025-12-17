@@ -30,10 +30,6 @@ pub fn solve_problem(problem: &Problem) -> usize {
                     continue;
                 }
 
-                if new_state == problem.joltage_req {
-                    return current_cost + 1;
-                }
-
                 match cache.get(&new_state) {
                     Some(&cost) if cost > current_cost + 1 => {
                         // new_state already exists, but we have a better path -> update & re-trigger
