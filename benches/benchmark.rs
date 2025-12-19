@@ -59,3 +59,8 @@ fn day10() {
 fn day11() {
     let _ = aoc::day11::p2::solve(divan::black_box(include_str!("../src/day11/input.txt")));
 }
+
+#[divan::bench(max_time = 1)]
+fn day12() {
+    let _ = aoc::day12::p1::solve(divan::black_box(include_str!("../src/day12/input.txt")));
+}
